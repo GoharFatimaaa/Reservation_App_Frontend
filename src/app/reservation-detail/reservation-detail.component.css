@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+  }
+  @media only screen and (max-width: 430px) {
+    .sm-setting{
+      overflow: scroll !important;
+    }
+
+    tr,td{
+      font-size: x-small;
+      justify-content: space-evenly !important;
+        }
+            th{
+              font-size: x-small;
+                }
+            .btn-adjustment{
+              display: flex;
+              font-size: x-small;
+            }
+
+
+  }

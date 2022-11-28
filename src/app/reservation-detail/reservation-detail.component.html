@@ -1,0 +1,107 @@
+
+<app-header></app-header>
+<mat-card class=" container mt-2">
+  <h1 class="text-center">My Bookings</h1>
+  <!-- <mat-card-content class="overflow-hidden adjustment"> -->
+    <table mat-table  [dataSource]="DUMMY_DATA" class="table table-hover">
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef  class="bg-primary text-white" >ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.Id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef  class="bg-primary text-white">Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Room">
+        <th mat-header-cell *matHeaderCellDef class="abc"  class="bg-primary text-white">Room</th>
+        <td mat-cell *matCellDef="let element">{{ element.Room }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef class="bg-primary text-white">Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.Date }}</td>
+      </ng-container>
+      <ng-container matColumnDef="To">
+        <th mat-header-cell *matHeaderCellDef  class="bg-primary text-white">To</th>
+        <td mat-cell *matCellDef="let element">{{ element.To }}</td>
+      </ng-container>
+      <ng-container matColumnDef="From">
+        <th mat-header-cell *matHeaderCellDef  class="bg-primary text-white">From</th>
+        <td mat-cell *matCellDef="let element">{{ element.From }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Duration">
+        <th mat-header-cell *matHeaderCellDef class="bg-primary text-white ">Duration</th>
+        <td mat-cell *matCellDef="let element">{{ element.Duration }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef class="bg-primary text-white">Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="btn-adjustment">
+            <mat-icon color="primary">edit</mat-icon>
+            <mat-icon color="warn">delete</mat-icon>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="border border-grey"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" class=" border border-grey"></tr>
+    </table>
+  <!-- </mat-card-content> -->
+  <mat-paginator class="paginator"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</mat-card>
+
+
+<!-- <app-booking></app-booking> -->
+<!-- <mat-card class="main-div">
+<table mat-table [dataSource]="DUMMY_DATA" class=" mat-elevation-z8 tabledata">
+
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Room">
+    <th mat-header-cell *matHeaderCellDef> Room </th>
+    <td mat-cell *matCellDef="let element"> {{element.Room}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="To">
+    <th mat-header-cell *matHeaderCellDef> To </th>
+    <td mat-cell *matCellDef="let element"> {{element.To}} </td>
+  </ng-container>
+  <ng-container matColumnDef="From">
+    <th mat-header-cell *matHeaderCellDef> From </th>
+    <td mat-cell *matCellDef="let element"> {{element.From}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Duration">
+    <th mat-header-cell *matHeaderCellDef> Duration </th>
+    <td mat-cell *matCellDef="let element"> {{element.Duration}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Action">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element">
+        <div>
+            <a style="margin-right: 1rem;" mat-raised-button color="primary">Edit</a>
+            <a mat-raised-button color="warn">Delete</a>
+        </div>
+    </td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</mat-card> -->

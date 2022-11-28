@@ -1,0 +1,20 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+  }
+  
+  a.title {
+    color: white;
+    
+  }
+  
+  mat-toolbar{
+    background-color: #6610f2;
+  }
+  
+  /* .align{
+    transform: translate(45%,50%);
+  } */
+  
+  .btn{
+    margin-left: 50px;
+  }
