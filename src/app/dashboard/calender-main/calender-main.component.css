@@ -1,0 +1,14 @@
+.scroll
+{
+  /* width: 150vh; */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+.cal-hour-segment.cal-hour-start.ng-star-inserted {
+  background-color: white;
+}
+mwl-calendar-week-view-hour-segment.ng-star-inserted {
+  background-color: white;
+}

@@ -1,0 +1,32 @@
+
+  <div class="scroll container m-4 ">
+    <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+    </mwl-demo-utils-calendar-header>
+
+    <div [ngSwitch]="view">
+      <mwl-calendar-month-view
+        *ngSwitchCase="'month'"
+        [viewDate]="viewDate"
+
+      >
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        [viewDate]="viewDate"
+
+      >
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view
+
+        *ngSwitchCase="'day'"
+        [hourSegmentTemplate]="hourSegmentTemplate"
+        [viewDate]="viewDate"
+
+
+      >
+      </mwl-calendar-day-view>
+    </div>
+  </div>
+
+
+

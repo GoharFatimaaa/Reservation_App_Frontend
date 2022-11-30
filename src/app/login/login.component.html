@@ -1,0 +1,16 @@
+<div class="container-fluid image">
+    <div class="container align text-center">
+        <h4 *ngIf="!loginDisplay" class="m-4"><strong>Click here to login</strong></h4>
+        <button
+          mat-raised-button
+          class="btn"
+          *ngIf="!loginDisplay"
+          color="primary"
+          (click)="login()"
+        >
+          Login
+        </button>
+      </div>
+      <app-dashboard *ngIf="loginDisplay" routerLink="/dashboard"></app-dashboard>
+</div>
+

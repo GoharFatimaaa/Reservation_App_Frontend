@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+    text-align: center;
+
+  }
+
+
+.head{
+font-size: 16px;
+padding: 1%;
+}
+  @media only screen and (max-width: 430px) {
+    .sm-setting{
+      overflow: scroll !important;
+    }
+
+    /* tr,td{
+      font-size: x-small;
+      justify-content: center !important;
+        }
+            th{
+              font-size: x-small;
+                }
+            .btn-adjustment{
+              display: flex;
+              font-size: x-small;
+            }
+ */
+
+  }
