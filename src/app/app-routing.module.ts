@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserUtils } from '@azure/msal-browser';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
 import { MsalGuard } from '@azure/msal-angular';
 import { ReservationDetailComponent } from './reservation-detail/reservation-detail.component';
  import { ReservationComponent } from './reservation/reservation.component';

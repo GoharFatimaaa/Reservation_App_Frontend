@@ -1,23 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
-// import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
-// import {MatFormFieldModule} from '@angular/material/form-field';
-// import {MatDatepickerModule} from '@angular/material/datepicker';
- import {MatSelectModule} from '@angular/material/select';
+import {MatSelectModule} from '@angular/material/select';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http"; // Import
+import { MatOptionModule } from '@angular/material/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { MatOptionModule } from '@angular/material/core';
+
 import { MsalModule,   MsalRedirectComponent,MsalGuard,MsalInterceptor  } from '@azure/msal-angular';
 import { PublicClientApplication,InteractionType  } from '@azure/msal-browser';
 import { ReservationDetailComponent } from './reservation-detail/reservation-detail.component';
@@ -29,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -48,6 +44,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { LoginComponent } from './login/login.component';
 import { CalenderMainComponent } from './dashboard/calender-main/calender-main.component';
 import { DemoUtilsModule } from './dashboard/demo-utils/module';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 // import matdialo
 
@@ -62,8 +60,6 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     MainContentComponent,
     SideNavComponent,
     HomeComponent,
-    ProfileComponent,
-
     ReservationDetailComponent,
     ReservationComponent,
     LoginComponent
@@ -92,12 +88,15 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     MatDividerModule,
     FullCalendarModule,
     BrowserAnimationsModule,
+    MatAutocompleteModule,
     FlatpickrModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    NgMultiSelectDropDownModule,
+    ReactiveFormsModule,
     NgbModalModule,
     HttpClientModule,
     MsalModule.forRoot( new PublicClientApplication({
@@ -118,7 +117,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
   }, {
     interactionType: InteractionType.Redirect, // MSAL Interceptor Configuration
     protectedResourceMap: new Map([
-        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']],
+        ['https://graph.microsoft.com/v1.0/users', ['user.read.all']]
     ])
   }),
   ],

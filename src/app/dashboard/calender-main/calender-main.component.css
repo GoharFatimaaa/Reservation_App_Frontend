@@ -7,8 +7,14 @@
 
 }
 .cal-hour-segment.cal-hour-start.ng-star-inserted {
-  background-color: white;
+  background-color: white !important;
 }
 mwl-calendar-week-view-hour-segment.ng-star-inserted {
+  background-color: white !important;
+}
+.cal-hour-segment.cal-hour-start {
+  background-color: white;
+}
+.cal-hour-segment.cal-after-hour-start {
   background-color: white;
 }

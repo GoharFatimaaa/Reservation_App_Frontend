@@ -29,7 +29,7 @@ export class CalenderMainComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  view: CalendarView = CalendarView.Month;
+  view: CalendarView = CalendarView.Day;
 
   viewDate: Date = new Date();
 
